@@ -7,16 +7,16 @@ class CampSite {
   final bool isCloseToWater;
   final bool isCampFireAllowed;
   final double pricePerNight;
-  final String photo;
+  final String? photo;
 
   CampSite(
       {required this.id,
       required this.label,
       required this.geoLocation,
       required this.pricePerNight,
-      required this.photo,
-      required this.isCampFireAllowed,
-      required this.isCloseToWater});
+       this.photo,
+       this.isCampFireAllowed=false,
+       this.isCloseToWater=false});
 
   factory CampSite.fromRawJson(String str) => CampSite.fromJson(json.decode(str));
 
